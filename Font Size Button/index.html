@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="button">
+            <button type="button" class="btn btn-sm active">A</button>
+            <button type="button" class="btn btn-md">A</button>
+            <button type="button" class="btn btn-lg">A</button>
+        </div>
+        <div class="content">
+            <h2>Font Size Button</h2>
+            <p>The beauty of nature lies in its freshness, openness, slow breeze and the warm sun – relief for our brains. Nature is made of everything we see around us the trees, flowers, plants, animals, sky, mountains, forests and more. We find many colors in nature which make the Earth beautiful.
+
+                <br><br>
+                
+Nature is the ultimate source of our living. Both living and non-living things include nature, and everyone is interdependent, which helps maintain the ecosystem. Plants, animals, and humans all depend on nature for their survival. It supplies oxygen, sunlight, soil, water, and other necessary components.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Inisialisasi
+        const btns = document.querySelectorAll('.btn');
+        const btnsm = document.querySelector('.btn-sm');
+        const btnmd = document.querySelector('.btn-md');
+        const btnlg = document.querySelector('.btn-lg');
+        const h2 = document.querySelector('.content h2');
+        const p = document.querySelector('.content p');
+
+        btns.forEach(btn => {
+            btn.onclick = function () {
+
+                // active
+                btns.forEach(btn => {
+                    btn.classList.remove('active');
+                })
+                btn.classList.add('active');
+
+                // Font Size
+                switch (btn.classList[1]) {
+                    case 'btn-sm':
+                        h2.style.fontSize = '1.5em';
+                        p.style.fontSize = '1em';
+                        break;
+                    case 'btn-md':
+                        h2.style.fontSize = '1.65em';
+                        p.style.fontSize = '1.15em';
+                        break;
+                    case 'btn-lg':
+                        h2.style.fontSize = '1.8em';
+                        p.style.fontSize = '1.3em';
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
